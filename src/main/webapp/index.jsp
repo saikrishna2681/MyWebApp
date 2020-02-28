@@ -5,9 +5,9 @@
   <body>
     <form action="/hello" method="POST">
       <label for="empId">Emp ID:</label><br>
-      <input type="text" id="empId" name="Emp ID" />
+      <input type="text" id="empId" name="empId" />
       <label for="empName">EMP Name:</label><br>
-      <input type="text" id="empName" name="EMP Name" />
+      <input type="text" id="empName" name="empName" />
       <input type="submit" value="Submit" />
     </form>
   </body>
