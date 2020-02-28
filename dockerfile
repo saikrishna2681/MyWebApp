@@ -1,7 +1,7 @@
 FROM openjdk:12-alpine
 FROM tomcat
-COPY target/MavenWebApp.war /webapp.war
+COPY target/MavenWebApp.war /usr/local/tomcat/webapps
 
 CMD ["java" , "-jar" , "/webapp.war"]
 
-EXPOSE 9081
+CMD ["catalina.sh", "run"]
