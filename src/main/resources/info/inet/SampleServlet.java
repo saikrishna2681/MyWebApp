@@ -1,6 +1,6 @@
 package info.inet;
 
-@WebServlet("/hello")
+@WebServlet("/SampleServlet")
 public class SampleServlet extends HttpServlet {
    private static final long serialVersionUID = 1L;
    @Override
