@@ -19,7 +19,7 @@
     <finalName>MavenWebApp</finalName>
    <resources>
         <resource>
-          <directory>src/main</directory>
+          <sourceDirectory>src/main/resources/info/inet</sourceDirectory>
         </resource>
       </resources>
   </build>
