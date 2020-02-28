@@ -3,7 +3,7 @@
     <title>Your Title Here</title>
   </head>
   <body>
-    <form action="./hello" method="POST">
+    <form action="./hello" method="GET">
       <label for="empId">Emp ID:</label><br>
       <input type="text" id="empId" name="empId" />
       <label for="empName">EMP Name:</label><br>
