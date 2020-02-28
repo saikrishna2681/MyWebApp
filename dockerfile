@@ -4,4 +4,4 @@ COPY MavenWebApp\target\MavenWebApp.war /demo.war
 
 CMD ["java" , "-jar" , "/demo.war"]
 
-EXPOSE 9080
+EXPOSE 9081
