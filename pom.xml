@@ -17,5 +17,10 @@
   </dependencies>
   <build>
     <finalName>MavenWebApp</finalName>
+   <resources>
+        <resource>
+          <directory>src/main/resources/info/inet/</directory>
+        </resource>
+      </resources>
   </build>
 </project>
