@@ -6,7 +6,10 @@ public class SampleServlet extends HttpServlet {
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
          throws ServletException, IOException {
+      
+      /sendind response
       resp.setContentType("text/plain");
+      resp.getWriter().write("Hello World! Maven Web Project Example.");
       resp.getWriter().write("Hello World! Maven Web Project Example.");
    }
 }
