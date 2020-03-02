@@ -13,7 +13,7 @@ public class SampleServlet extends HttpServlet {
    private static final long serialVersionUID = 1L;
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-         throws ServletException, IOException {
+         throws ServletException, IOException, ClassNotFoundException{
       
       //sendind response
       resp.setContentType("text/plain");
