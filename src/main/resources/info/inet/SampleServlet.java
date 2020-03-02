@@ -22,7 +22,7 @@ public class SampleServlet extends HttpServlet {
       
       Class.forName("com.mysql.jdbc.Driver");  
       Connection con=DriverManager.getConnection(  
-      "jdbc:mysql://localhost:3306/sonoo","root","root"); 
+      "jdbc:mysql://54.81.76.102:3306/MyDB","root","mysql"); 
       Statement stmt=con.createStatement();  
       int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
       resp.getWriter().write("Records updated : "+updates);
