@@ -13,18 +13,22 @@ public class SampleServlet extends HttpServlet {
    private static final long serialVersionUID = 1L;
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-         throws ServletException, IOException, ClassNotFoundException{
+         throws ServletException, IOException{
       
       //sendind response
-      resp.setContentType("text/plain");
-      resp.getWriter().write("Hello World! Maven Web Project Example.");
-      resp.getWriter().write("Hello World! Maven Web Project Example.");
-      
-      Class.forName("com.mysql.jdbc.Driver");  
-      Connection con=DriverManager.getConnection(  
-      "jdbc:mysql://54.81.76.102:3306/MyDB","root","mysql"); 
-      Statement stmt=con.createStatement();  
-      int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
-      resp.getWriter().write("Records updated : "+updates);
+      try {  
+         resp.setContentType("text/plain");
+         resp.getWriter().write("Hello World! Maven Web Project Example.");
+         resp.getWriter().write("Hello World! Maven Web Project Example.");
+
+         Class.forName("com.mysql.jdbc.Driver");  
+         Connection con=DriverManager.getConnection(  
+         "jdbc:mysql://54.81.76.102:3306/MyDB","root","mysql"); 
+         Statement stmt=con.createStatement();  
+         int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
+         resp.getWriter().write("Records updated : "+updates);
+      } catch(Exception e){ 
+         System.out.println(e);
+      }  
    }
 }
