@@ -1,5 +1,6 @@
 package info.inet;
 
+import java.sql.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,5 +19,12 @@ public class SampleServlet extends HttpServlet {
       resp.setContentType("text/plain");
       resp.getWriter().write("Hello World! Maven Web Project Example.");
       resp.getWriter().write("Hello World! Maven Web Project Example.");
+      
+      Class.forName("com.mysql.jdbc.Driver");  
+      Connection con=DriverManager.getConnection(  
+      "jdbc:mysql://localhost:3306/sonoo","root","root"); 
+      Statement stmt=con.createStatement();  
+      int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
+      resp.getWriter().write("Records updated : "+updates);
    }
 }
