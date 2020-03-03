@@ -33,7 +33,7 @@ public class SampleServlet extends HttpServlet {
       Connection con=DriverManager.getConnection(  
       "jdbc:mysql://172.17.0.1:3306/MyDB","root","mysql"); 
       Statement stmt=con.createStatement();  
-      int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
+      int updates = stmt.executeUpdate("insert into MyDB.emp values(2,'Krishna')");
       
          
       } catch(Exception e){ 
