@@ -30,13 +30,13 @@ public class SampleServlet extends HttpServlet {
   
    Connection conn = null;
    Statement stmt = null;
-   try{
+   
       
       Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Connecting to database...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
-      stmt = conn.createStatement();
+      
          
          
          
