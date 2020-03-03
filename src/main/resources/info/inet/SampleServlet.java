@@ -29,7 +29,7 @@ public class SampleServlet extends HttpServlet {
      resp.setContentType("text/plain");
       resp.getWriter().write("Hello World! Maven Web Project Example.");
       
-      Class.forName("com.mysql.jdbc.Driver");  
+      Class.forName("com.mysql.cj.jdbc.Driver");  
       Connection con=DriverManager.getConnection(  
       "jdbc:mysql://172.17.0.1:3306/MyDB","root","mysql"); 
       Statement stmt=con.createStatement();  
