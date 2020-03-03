@@ -20,11 +20,13 @@ public class SampleServlet extends HttpServlet {
          resp.setContentType("text/plain");
          resp.getWriter().write("Hello World! Maven Web Project Example.");
          resp.getWriter().write("Hello World! Maven Web Project Example 1231324214234.");
-         Syste
+         
          Class.forName("com.mysql.cj.jdbc.Driver");  
          Connection con=DriverManager.getConnection(  
          "jdbc:mysql://localhost:3306/MyDB","root","mysql"); 
+         resp.getWriter().write("Establishing Connection : "+con);
          Statement stmt=con.createStatement();  
+         resp.getWriter().write("Statement : "+stmt);
          int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
          resp.getWriter().write("Records updated : "+updates);
       } catch(Exception e){ 
