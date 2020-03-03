@@ -26,21 +26,18 @@ public class SampleServlet extends HttpServlet {
       
    
        try {  
-      Class.forName("com.mysql.jdbc.Driver");
-      System.out.println("Connecting to database...");
-     Connection  conn = DriverManager.getConnection("jdbc:mysql://172.17.0.1:3306/MyDB","root","mysql");
-
+     resp.setContentType("text/plain");
+      resp.getWriter().write("Hello World! Maven Web Project Example.");
+      
+      Class.forName("com.mysql.jdbc.Driver");  
+      Connection con=DriverManager.getConnection(  
+      "jdbc:mysql://172.17.0.1:3306/MyDB","root","mysql"); 
+      Statement stmt=con.createStatement();  
+      int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
       
          
-         
-         
-         resp.getWriter().write("Establishing Connection : "+conn);
-         Statement stmt=con.createStatement();  
-         resp.getWriter().write("Statement : "+stmt);
-         int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
-         resp.getWriter().write("Records updated : "+updates);
       } catch(Exception e){ 
-         System.out.println(e);
+         e.printStackTrace();
       }  
    }
 }
