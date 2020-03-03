@@ -28,7 +28,7 @@ public class SampleServlet extends HttpServlet {
        try {  
       Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Connecting to database...");
-     Connection  conn = DriverManager.getConnection("jdbc:mysql://mysql1:3306/MyDB","root","mysql");
+     Connection  conn = DriverManager.getConnection("jdbc:mysql://172.17.0.1:3306/MyDB","root","mysql");
 
       
          
