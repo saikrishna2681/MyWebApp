@@ -21,7 +21,7 @@ public class SampleServlet extends HttpServlet {
          resp.getWriter().write("Hello World! Maven Web Project Example.  5345fsdfvdsv");
          resp.getWriter().write("Hello World! Maven Web Project Example 1231324214234 fsafas.");
          
-         Class.forName("com.mysql.cj.jdbc.Driver");  
+         Class.forName("com.mysql.jdbc.Driver");  
          Connection con=DriverManager.getConnection(  
          "jdbc:mysql://172.17.0.1:3306/MyDB","root","mysql"); 
          resp.getWriter().write("Establishing Connection : "+con);
