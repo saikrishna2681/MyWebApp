@@ -15,15 +15,7 @@ public class SampleServlet extends HttpServlet {
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
          throws ServletException, IOException{
       
-         static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://mysql1:3306/MyDB";
-
-   static final String USER = "root";
-   static final String PASS = "mysql";
-   
-  
-   Connection conn = null;
-   Statement stmt = null;
+       
       
       //sendind response
      
@@ -36,14 +28,14 @@ public class SampleServlet extends HttpServlet {
        try {  
       Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Connecting to database...");
-      conn = DriverManager.getConnection(DB_URL,USER,PASS);
+     Connection  conn = DriverManager.getConnection("jdbc:mysql://mysql1:3306/MyDB","root","mysql");
 
       
          
          
          
          resp.getWriter().write("Establishing Connection : "+conn);
-         stmt=con.createStatement();  
+         Statement stmt=con.createStatement();  
          resp.getWriter().write("Statement : "+stmt);
          int updates = stmt.executeUpdate("insert into EMP values(2,'Krishna')");
          resp.getWriter().write("Records updated : "+updates);
