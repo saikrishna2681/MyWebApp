@@ -23,7 +23,7 @@ public class SampleServlet extends HttpServlet {
          
          Class.forName("com.mysql.cj.jdbc.Driver");  
          Connection con=DriverManager.getConnection(  
-         "jdbc:mysql://172.17.0.1:3306/MyDB","root","mysql"); 
+         "jdbc:mysql://mysql1:3306/MyDB","root","mysql"); 
          resp.getWriter().write("Establishing Connection : "+con);
          Statement stmt=con.createStatement();  
          resp.getWriter().write("Statement : "+stmt);
