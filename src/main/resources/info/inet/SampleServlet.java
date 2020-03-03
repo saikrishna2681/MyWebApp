@@ -18,8 +18,8 @@ public class SampleServlet extends HttpServlet {
       //sendind response
       try {  
          resp.setContentType("text/plain");
-         resp.getWriter().write("Hello World! Maven Web Project Example.  5345fsdfvdsv");
-         resp.getWriter().write("Hello World! Maven Web Project Example 1231324214234 fsafas.");
+         resp.getWriter().write("Hello World! Maven Web Project Example. ");
+         resp.getWriter().write("Hello World! Maven Web Project Example ");
          
          Class.forName("com.mysql.cj.jdbc.Driver");  
          Connection con=DriverManager.getConnection(  
