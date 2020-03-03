@@ -15,12 +15,6 @@ public class SampleServlet extends HttpServlet {
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
          throws ServletException, IOException{
       
-      //sendind response
-     
-         resp.setContentType("text/plain");
-         resp.getWriter().write("Hello World! Maven Web Project Example. ");
-         resp.getWriter().write("Hello World! Maven Web Project Example ");
-         
          static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
    static final String DB_URL = "jdbc:mysql://mysql1:3306/MyDB";
 
@@ -30,6 +24,14 @@ public class SampleServlet extends HttpServlet {
   
    Connection conn = null;
    Statement stmt = null;
+      
+      //sendind response
+     
+         resp.setContentType("text/plain");
+         resp.getWriter().write("Hello World! Maven Web Project Example. ");
+         resp.getWriter().write("Hello World! Maven Web Project Example ");
+         
+      
    
        try {  
       Class.forName("com.mysql.jdbc.Driver");
