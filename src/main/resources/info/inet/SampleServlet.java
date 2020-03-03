@@ -16,7 +16,7 @@ public class SampleServlet extends HttpServlet {
          throws ServletException, IOException{
       
       //sendind response
-      try {  
+     
          resp.setContentType("text/plain");
          resp.getWriter().write("Hello World! Maven Web Project Example. ");
          resp.getWriter().write("Hello World! Maven Web Project Example ");
@@ -31,7 +31,7 @@ public class SampleServlet extends HttpServlet {
    Connection conn = null;
    Statement stmt = null;
    
-      
+       try {  
       Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Connecting to database...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
