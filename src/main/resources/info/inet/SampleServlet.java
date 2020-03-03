@@ -19,8 +19,8 @@ public class SampleServlet extends HttpServlet {
       try {  
          resp.setContentType("text/plain");
          resp.getWriter().write("Hello World! Maven Web Project Example.");
-         resp.getWriter().write("Hello World! Maven Web Project Example.");
-
+         resp.getWriter().write("Hello World! Maven Web Project Example 1231324214234.");
+         Syste
          Class.forName("com.mysql.cj.jdbc.Driver");  
          Connection con=DriverManager.getConnection(  
          "jdbc:mysql://localhost:3306/MyDB","root","mysql"); 
