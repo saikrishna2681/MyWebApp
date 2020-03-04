@@ -24,7 +24,7 @@ public class SampleServlet extends HttpServlet {
          resp.getWriter().write("Hello World! Maven Web Project Example ");
          
       String id=req.getParameter("empId");
-		String name=req.getParameter("empName")
+		String name=req.getParameter("empName");
          
          resp.getWriter().write("EMP ID : "+id);
          resp.getWriter().write("EMP Name : "+name);
