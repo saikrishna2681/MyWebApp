@@ -38,7 +38,7 @@ public class SampleServlet extends HttpServlet {
       "jdbc:mysql://172.17.0.1:3306/hello_java?useSSL=false","demo_java","1234"); 
           
       PreparedStatement pstmt=con.prepareStatement("insert into hello_java.emp values(?,?)");  
-      pstmt.setInt(1,id);
+      pstmt.setString(1,id);
           pstmt.setString(2,name);
       int updates = pstmt.executeUpdate();
           resp.getWriter().write("No Of records inserted : "+updates);
