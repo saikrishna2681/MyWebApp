@@ -31,7 +31,7 @@ public class SampleServlet extends HttpServlet {
       
       Class.forName("com.mysql.cj.jdbc.Driver");  
       Connection con=DriverManager.getConnection(  
-      "jdbc:mysql://localhost:3306/MyDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","mysql"); 
+      "jdbc:mysql://localhost:3306/hello_java","demo_java","1234"); 
           
       Statement stmt=con.createStatement();  
       int updates = stmt.executeUpdate("insert into MyDB.emp values(2,'Krishna')");
