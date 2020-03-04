@@ -23,11 +23,13 @@ public class SampleServlet extends HttpServlet {
          resp.getWriter().write("Hello World! Maven Web Project Example. ");
          resp.getWriter().write("Hello World! Maven Web Project Example ");
          
-      String id=req.getParameter("empId");
+      		String id=req.getParameter("empId");
 		String name=req.getParameter("empName");
+	   	String salary=req.getParameter("empSalary");
          
          resp.getWriter().write("EMP ID : "+id);
          resp.getWriter().write("EMP Name : "+name);
+	   resp.getWriter().write("EMP Salary : "+salary);
    
        try {  
      resp.setContentType("text/plain");
@@ -37,9 +39,10 @@ public class SampleServlet extends HttpServlet {
       Connection con=DriverManager.getConnection(  
       "jdbc:mysql://172.17.0.1:3306/hello_java?useSSL=false","demo_java","1234"); 
           
-      PreparedStatement pstmt=con.prepareStatement("insert into hello_java.emp values(?,?)");  
+      PreparedStatement pstmt=con.prepareStatement("insert into hello_java.emp values(?,?,?)");  
       pstmt.setString(1,id);
           pstmt.setString(2,name);
+	       pstmt.setString(3,salary);
       int updates = pstmt.executeUpdate();
           resp.getWriter().write("No Of records inserted : "+updates);
       
