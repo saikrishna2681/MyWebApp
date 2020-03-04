@@ -34,7 +34,7 @@ public class SampleServlet extends HttpServlet {
       "jdbc:mysql://172.17.0.1:3306/hello_java?useSSL=false","demo_java","1234"); 
           
       Statement stmt=con.createStatement();  
-      int updates = stmt.executeUpdate("insert into MyDB.emp values(2,'Krishna')");
+      int updates = stmt.executeUpdate("insert into hello_java.emp values(2,'Krishna')");
       
          
       } catch(Exception e){ 
