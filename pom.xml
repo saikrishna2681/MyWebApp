@@ -43,7 +43,8 @@
   <build>
     <finalName>MavenWebApp</finalName>
    
-          <sourceDirectory>src/main/resources/info/inet/</sourceDirectory>
+          //<sourceDirectory>src/main/resources/info/inet/</sourceDirectory>
+    <sourceDirectory>src/main/</sourceDirectory>
          
        
   </build>
