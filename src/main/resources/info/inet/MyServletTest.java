@@ -30,7 +30,7 @@ public class MyServletTest extends TestCase{
     }
  
     @Test
-    public void testFullName() throws IOException, ServletException {
+    public void testFullName() throws Exception {
  
         when(request.getParameter("empId")).thenReturn("56789");
         when(request.getParameter("empName")).thenReturn("ABCDE");
