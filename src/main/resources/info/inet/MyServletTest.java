@@ -32,8 +32,8 @@ public class MyServletTest {
     @Test
     public void testFullName() throws IOException, ServletException {
  
-        when(request.getParameter("fn")).thenReturn("Vinod");
-        when(request.getParameter("ln")).thenReturn("Kashyap");
+        when(request.getParameter("empId")).thenReturn("56789");
+        when(request.getParameter("empName")).thenReturn("ABCDE");
  
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);
@@ -43,7 +43,7 @@ public class MyServletTest {
         MyServlet myServlet =new MyServlet();
         myServlet.doGet(request, response);
         String result = sw.getBuffer().toString().trim();
-        assertEquals(result, new String("Full Name: Vinod Kashyap"));
+        assertEquals(result, new String("Full Name: ABCDE"));
  
     }
 }
