@@ -40,7 +40,9 @@ public class MyServletTest extends TestCase{
          
         when(response.getWriter()).thenReturn(pw);
  
-        SampleServlet myServlet =new SampleServlet();
+       
+     
+     SampleServlet myServlet =new SampleServlet();
         myServlet.doGet(request, response);
         String result = sw.getBuffer().toString().trim();
         assertEquals(result, new String("Full Name: ABCDE"));
