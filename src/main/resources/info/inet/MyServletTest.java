@@ -1,4 +1,4 @@
-package com.javacodegeeks;
+package info.inet;
  
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
