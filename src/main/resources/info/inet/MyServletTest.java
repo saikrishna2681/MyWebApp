@@ -40,7 +40,7 @@ public class MyServletTest {
          
         when(response.getWriter()).thenReturn(pw);
  
-        MyServlet myServlet =new MyServlet();
+        SampleServlet myServlet =new SampleServlet();
         myServlet.doGet(request, response);
         String result = sw.getBuffer().toString().trim();
         assertEquals(result, new String("Full Name: ABCDE"));
