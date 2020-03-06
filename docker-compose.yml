@@ -9,8 +9,7 @@ services:
     - /var/jenkins_home
     - /var/run/docker.sock:/var/run/docker.sock
   db:
-    build: mysql/mysql-server:5.7
-    image: 2681/mysql
+    image: mysql/mysql-server:5.7
     restart: always
     environment:
       MYSQL_DATABASE: 'hello_java'
