@@ -2,6 +2,7 @@ version: '2'
 services:
   web:
     build: .
+    image: 2681/webapp
     ports:
       - "9080:8080"
     volumes:
