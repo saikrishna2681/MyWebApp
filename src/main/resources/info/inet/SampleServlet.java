@@ -37,7 +37,7 @@ public class SampleServlet extends HttpServlet {
       
       Class.forName("com.mysql.jdbc.Driver");  
       Connection con=DriverManager.getConnection(  
-      "jdbc:mysql://172.17.0.1:3306/hello_java?useSSL=false","demo_java","1234"); 
+      "jdbc:mysql://172.18.0.1:3306/hello_java?useSSL=false","demo_java","1234"); 
           
       PreparedStatement pstmt=con.prepareStatement("insert into hello_java.emp values(?,?,?)");  
       pstmt.setString(1,id);
