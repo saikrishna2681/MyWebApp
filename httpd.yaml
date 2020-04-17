@@ -1,0 +1,7 @@
+# cat httpd..
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: install httpd*
+    yum: name=httpd state=latest
