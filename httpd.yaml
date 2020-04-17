@@ -1,8 +1,8 @@
 # cat httpd..
 ---
 - hosts: all
-  remote_user: ansadmin
-  become: yes
+  become_user: ansadmin
   tasks:
   - name: install httpd*
     yum: name=httpd state=latest
+    become: yes
