@@ -1,6 +1,6 @@
 # cat httpd..
 ---
-- hosts: all
+- hosts: apache
   tasks:
   - name: install httpd*
     yum: name=httpd state=latest
