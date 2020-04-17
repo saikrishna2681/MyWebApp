@@ -43,4 +43,20 @@
          
        
   </build>
+  
+  <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>LTIN124555-releases</name>
+        <url>http://3.20.223.37:8082/artifactory/libs-release/</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>libs-snapshot</name>
+      <url>http://3.20.223.37:8082/artifactory/libs-snapshot/</url>
+    </snapshotRepository>
+</distributionManagement>
+  
+  
+  
 </project>
