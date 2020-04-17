@@ -1,6 +1,7 @@
 # cat httpd..
 ---
 - hosts: all
+  remote_user: ansadmin
   become: yes
   tasks:
   - name: install httpd*
