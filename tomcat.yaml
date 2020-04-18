@@ -4,7 +4,7 @@
   gather_facts: false
   become: yes
   vars:
-    tomcat_user: 8089
+    tomcat_port: 8089
   tasks:
   - name: Installing req Java
     get_url:
