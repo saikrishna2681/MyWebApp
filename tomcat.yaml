@@ -1,0 +1,14 @@
+---
+  - name:  Install Tomcat
+    hosts: apache
+	gather_facts: false
+	become: yes
+	tasks:
+	  - name: Updating repos
+	    yum:
+		  name: "*"
+		  state: latest
+	  - name: Installing req Java
+	    yum:
+		  name: 1.8.0-openjdk
+		  state: present
