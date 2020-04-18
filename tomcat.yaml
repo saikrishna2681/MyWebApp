@@ -28,4 +28,4 @@
       src: tomcat-users.xml.j2
       dest: /opt/tomcat/latest/conf/tomcat-users.xml
   - name: start tomcat
-    shell:  nohup /opt/tomcat/latest/bin/catalina.sh &
+    shell:  nohup /opt/tomcat/latest/bin/catalina.sh start &
