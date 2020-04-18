@@ -5,6 +5,8 @@
   become: yes
   vars:
     tomcat_port: 8089
+    tomcat_user: tomcat
+    tomcat_password: tomcat123
   tasks:
   - name: Installing req Java
     get_url:
@@ -21,5 +23,9 @@
     template:
       src: server.xml.j2
       dest: /opt/tomcat/latest/conf/server.xml
+  - name: Rplacing tomcat user
+    template:
+      src: tomcat_users.j2
+      dest: /opt/tomcat/latest/conf/tomcat_users.xml
   - name: start tomcat
-    shell:  nohup /opt/tomcat/latest/bin/startup.sh &
+    shell:  nohup /opt/tomcat/latest/bin/catalina.sh &
