@@ -15,3 +15,5 @@
       remote_src: yes
   - name: Renaming Tomcat
     command: mv /opt/tomcat/apache-tomcat-9.0.34 /opt/tomcat/latest
+  - name: start tomcat
+    shell: /opt/tomcat/latest/startup.sh
