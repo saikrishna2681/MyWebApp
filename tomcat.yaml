@@ -17,5 +17,9 @@
       remote_src: yes
 #  - name: Renaming Tomcat
 #    command: mv /opt/tomcat/apache-tomcat-9.0.34 /opt/tomcat/latest
+  - name: Rplacing default port
+    template:
+	    src: server.xml.j2
+	    dest: /opt/tomcat/latest/server.xml
   - name: start tomcat
     shell:  nohup /opt/tomcat/latest/bin/startup.sh &
