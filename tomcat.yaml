@@ -35,5 +35,7 @@
     get_url:
       url:  http://3.15.201.98:8082/artifactory/libs-snapshot-local/MyWebapp/MavenWebApp/0.0.1-SNAPSHOT/MavenWebApp-0.0.1-20200417.112543-1.war
       dest: /opt/
+      username: admin
+      password: password123
   - name: start tomcat
     shell:  nohup /opt/tomcat/latest/bin/catalina.sh start &
