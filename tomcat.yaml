@@ -6,5 +6,5 @@
   tasks:
   - name: Installing req Java
     get_url:
-	    url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
-	    dest: /opt/tomcat
+      url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
+      dest: /opt/tomcat
