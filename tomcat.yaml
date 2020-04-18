@@ -17,8 +17,8 @@
       src: /opt/tomcat/apache-tomcat-9.0.34.tar.gz
       dest: /opt/tomcat
       remote_src: yes
-#  - name: Renaming Tomcat
-#    command: mv /opt/tomcat/apache-tomcat-9.0.34 /opt/tomcat/latest
+  - name: Renaming Tomcat
+    command: mv /opt/tomcat/apache-tomcat-9.0.34 /opt/tomcat/latest
   - name: Rplacing default port
     template:
       src: server.xml.j2
