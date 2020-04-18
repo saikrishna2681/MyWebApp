@@ -17,20 +17,20 @@
       src: /opt/tomcat/apache-tomcat-9.0.34.tar.gz
       dest: /opt/tomcat
       remote_src: yes
-  - name: Renaming Tomcat
-    command: mv /opt/tomcat/apache-tomcat-9.0.34 /opt/tomcat/latest
+#  - name: Renaming Tomcat
+#    command: mv /opt/tomcat/apache-tomcat-9.0.34 /opt/tomcat/latest
   - name: Rplacing default port
     template:
       src: server.xml.j2
-      dest: /opt/tomcat/latest/conf/server.xml
+      dest: /opt/tomcat/apache-tomcat-9.0.34/conf/server.xml
   - name: Rplacing tomcat user
     template:
       src: tomcat-users.xml.j2
-      dest: /opt/tomcat/latest/conf/tomcat-users.xml
+      dest: /opt/tomcat/apache-tomcat-9.0.34/conf/tomcat-users.xml
   - name: tomcat manager app from diffrent host
     template:
       src: context.xml.j2
-      dest: /opt/tomcat/latest/webapps/manager/META-INF/context.xml
+      dest: /opt/tomcat/apache-tomcat-9.0.34/webapps/manager/META-INF/context.xml
   - name: download from artifactory server
 #    maven_artifact:
 #      repository_url: http://3.15.201.98:8082/artifactory/libs-snapshot-local/MyWebapp/MavenWebApp
@@ -39,8 +39,8 @@
 #      dest: /opt/app/
     get_url:
       url:  http://3.15.201.98:8082/artifactory/libs-snapshot-local/MyWebapp/MavenWebApp/0.0.1-SNAPSHOT/MavenWebApp-0.0.1-20200417.112543-1.war
-      dest: /opt/tomcat/latest/webapps/
+      dest: /opt/tomcat/apache-tomcat-9.0.34/webapps/
       username: admin
       password: password123
   - name: start tomcat
-    shell:  nohup /opt/tomcat/latest/bin/catalina.sh start &
+    shell:  nohup /opt/tomcat/apache-tomcat-9.0.34/bin/catalina.sh start &
