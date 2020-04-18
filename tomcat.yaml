@@ -13,7 +13,7 @@
       src: /opt/tomcat/apache-tomcat-9.0.34.tar.gz
       dest: /opt/tomcat
       remote_src: yes
-  - name: Renaming Tomcat
-    command: mv /opt/tomcat/apache-tomcat-9.0.34 /opt/tomcat/latest
+#  - name: Renaming Tomcat
+#    command: mv /opt/tomcat/apache-tomcat-9.0.34 /opt/tomcat/latest
   - name: start tomcat
-    shell: /opt/tomcat/latest/startup.sh
+    shell:  nohup /opt/tomcat/latest/bin/startup.sh &
