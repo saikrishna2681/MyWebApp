@@ -54,6 +54,7 @@
       <id>snapshots</id>
       <name>libs-snapshot</name>
       <url>http://3.15.201.98:8082/artifactory/libs-snapshot/</url>
+      <uniqueVersion>false</uniqueVersion>
     </snapshotRepository>
 </distributionManagement>
   
