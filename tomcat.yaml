@@ -4,11 +4,7 @@
   gather_facts: false
   become: yes
   tasks:
-  - name: Updating repos
-    yum:
-      name: "*"
-      state: latest
   - name: Installing req Java
-    yum:
-      name: 1.8.0-openjdk
-      state: present
+    get_url:
+	    url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
+	    dest: /opt/tomcat
