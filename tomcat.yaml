@@ -32,10 +32,15 @@
       src: context.xml.j2
       dest: /opt/tomcat/latest/webapps/manager/META-INF/context.xml
   - name: download from artifactory server
-    get_url:
-      url:  http://3.15.201.98:8082/artifactory/libs-snapshot-local/MyWebapp/MavenWebApp
-      dest: /opt/app
-      username: admin
-      password: password123
+     maven_artifact:
+       repository_url: http://3.15.201.98:8082/artifactory/libs-snapshot-local/MyWebapp/MavenWebApp
+       username: admin
+       password: password123
+       dest: /opt/app/
+#    get_url:
+#      url:  http://3.15.201.98:8082/artifactory/libs-snapshot-local/MyWebapp/MavenWebApp
+#      dest: /opt/app
+#      username: admin
+#      password: password123
   - name: start tomcat
     shell:  nohup /opt/tomcat/latest/bin/catalina.sh start &
