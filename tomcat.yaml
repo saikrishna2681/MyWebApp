@@ -27,5 +27,9 @@
     template:
       src: tomcat-users.xml.j2
       dest: /opt/tomcat/latest/conf/tomcat-users.xml
+  - name: tomcat manager app from diffrent host
+    template:
+      src: context.xml.j2
+      dest: /opt/tomcat/latest/webapps/manager/META-INF/context.xml
   - name: start tomcat
     shell:  nohup /opt/tomcat/latest/bin/catalina.sh start &
