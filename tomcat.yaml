@@ -14,8 +14,6 @@
       dest: /opt/tomcat
   - name: Extract
     unarchive:
-      command: tar xzf /opt/tomcat/apache-tomcat-9.0.34.tar.gz chdir=/opt/tomcat/apache-tomcat-9.0.34/
-      when: not p.stat.exists
       src: /opt/tomcat/apache-tomcat-9.0.34.tar.gz
       dest: /opt/tomcat
       remote_src: yes
