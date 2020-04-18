@@ -49,6 +49,7 @@
         <id>central</id>
         <name>LTIN124555-releases</name>
         <url>http://3.15.201.98:8082/artifactory/libs-release/</url>
+        <uniqueVersion>false</uniqueVersion>
     </repository>
     <snapshotRepository>
       <id>snapshots</id>
