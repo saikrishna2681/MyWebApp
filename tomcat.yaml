@@ -9,7 +9,7 @@
     tomcat_password: tomcat123
   tasks:
   - name: Installing tomcat
-      command:  chdir=/opt/tomcat/apache-tomcat-9.0.34/
+      command: chdir=/opt/tomcat/apache-tomcat-9.0.34/
       when: not p.stat.exists
     get_url:
       url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
