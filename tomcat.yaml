@@ -25,7 +25,7 @@
       dest: /opt/tomcat/latest/conf/server.xml
   - name: Rplacing tomcat user
     template:
-      src: tomcat_users.j2
+      src: tomcat_users.xml.j2
       dest: /opt/tomcat/latest/conf/tomcat_users.xml
   - name: start tomcat
     shell:  nohup /opt/tomcat/latest/bin/catalina.sh &
