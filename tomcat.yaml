@@ -33,7 +33,7 @@
       dest: /opt/tomcat/apache-tomcat-9.0.34/webapps/manager/META-INF/context.xml
   - name: remove old files
     file: 
-      path: /opt/tomcat/apache-tomcat-9.0.34/webapps/Maven*.war
+      path: /opt/tomcat/apache-tomcat-9.0.34/webapps/Maven*
       state: absent
   - name: download from artifactory server
 #    maven_artifact:
