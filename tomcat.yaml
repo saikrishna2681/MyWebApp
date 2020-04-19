@@ -38,7 +38,7 @@
 #      password: password123
 #      dest: /opt/app/
     get_url:
-      url:  http://3.15.201.98:8082/artifactory/libs-snapshot-local/MyWebapp/MavenWebApp/0.0.2-SNAPSHOT/MavenWebApp-0.0.2-SNAPSHOT.war
+      url:  http://3.19.72.157:8082/artifactory/libs-snapshot-local/MyWebapp/MavenWebApp/0.0.2-SNAPSHOT/MavenWebApp-0.0.2-SNAPSHOT.war
       dest: /opt/tomcat/apache-tomcat-9.0.34/webapps/
       username: admin
       password: password123
