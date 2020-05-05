@@ -1,7 +1,6 @@
 def call(def args) {
-      def mvnHome = tool 'mvn'
-      //def javaHome = tool 'JDK8'
       
-          sh "${mvnHome}/bin/mvn mvn package"
+      def mvnhome = tool (name: 'mvn', type: 'maven') + '/bin/mvn'
+	sh('${mvn} mvn package')
       
  }
