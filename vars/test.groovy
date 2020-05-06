@@ -3,7 +3,7 @@ def call(String name, String value, String project) {
     // Scripted Pipeline
     echo "Project Name : ${project}"
     sh "docker image build -t 2681/${project} ."
-    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'USER', usernameVariable: 'PASS')]) {
+    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
 		// some block
      	sh "docker login -u '$USER' -p '$PASS'"
 	echo "USER $USER "
