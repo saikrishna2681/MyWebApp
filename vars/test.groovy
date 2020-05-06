@@ -5,7 +5,7 @@ def call(String name, String value, String project) {
     sh "docker image build -t 2681/${project} ."
     withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'USER', usernameVariable: 'PASS')]) {
 		// some block
-     	//sh "docker login -u '$USER' -p '$PASSWORD'"
+     	sh "docker login -u '$USER' -p '$PASS'"
 	echo "USER $USER "
 	    echo "USER ${PASS}"
     }
