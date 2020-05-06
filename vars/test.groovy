@@ -1,5 +1,6 @@
-def call(String name) {
+def call(String name, String value) {
     // Any valid steps can be called from this code, just like in other
     // Scripted Pipeline
     echo "Hello, ${name}."
+    echo "Hi, ${value}."
 }
