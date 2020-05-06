@@ -10,7 +10,7 @@ def call(String name, String value, String project, String tag) {
 		//echo "USER $USER "
 	  	//  echo "USER ${PASS}"
     	//}
-	sh('docker build -t ${project} .')
+	sh('docker build . -t ${project} ')
 	sh('docker tag ${project} saikrishna2681-sai2681.jfrog.io/${project}:${tag}')
 	withCredentials([usernamePassword(credentialsId: 'jfrog', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
     		sh "docker login -u '$USER' -p '$PASS' saikrishna2681-sai2681.jfrog.io'"
