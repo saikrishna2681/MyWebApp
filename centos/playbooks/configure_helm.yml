@@ -1,5 +1,5 @@
 ---
-- hosts: kubernetes-master
+- hosts: kubernetes-master-nodes
   become: yes
   
   tasks:
