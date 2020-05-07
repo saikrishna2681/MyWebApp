@@ -3,6 +3,8 @@
   become: yes
   
   tasks:
+  - name: Helm version
+    shell: helm version
   - name: Add Helm Repo
     shell: helm repo add helm https://saikrishna2681.jfrog.io/artifactory/sai2681/ --username admin --password admin123
 
