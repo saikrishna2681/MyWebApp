@@ -1,0 +1,60 @@
+---
+- hosts: all
+  become: yes
+  vars_files:
+  - env_variables
+  tasks:
+  - name: Disable swap
+    shell: swapoff -a
+    shell: sed -i '/ swap / s/^/#/' /etc/fstab
+
+  - name: Creating a repository file for Kubernetes
+    file:
+     path: /etc/yum.repos.d/kubernetes.repo
+     state: touch
+
+  - name: Adding repository details in Kubernetes repo file.
+    blockinfile:
+     path: /etc/yum.repos.d/kubernetes.repo
+     block: |
+      [kubernetes]
+      name=Kubernetes
+      baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+      enabled=1
+      gpgcheck=1
+      repo_gpgcheck=1
+      gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    
+  - name: Set Enforce 0 and selinux permission
+    shell: setenforce 0
+    shell: sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+
+  - name: Installing packages 
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ packages }}"
+
+  - name: Installing Kubernetes-CNI
+    yum:
+      name: kubernetes-cni
+      state: present
+
+  - name: Starting and Enabling the required services
+    service:
+     name: "{{ item }}"
+     state: started
+     enabled: yes
+    with_items: "{{ services }}"
+  
+  - name: Enabling Bridge Firewall Rule
+    shell: "echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables"
+
+  - name: Install Helm
+    shell: |
+      sudo wget 'https://get.helm.sh/helm-v3.2.0-linux-amd64.tar.gz'
+      sudo tar -xvf helm-v3.2.0-linux-amd64.tar.gz
+      sudo cp linux-amd64/helm /bin/
+      sudo helm repo add helm https://csudharsan.jfrog.io/artifactory/helm --username admin --password AP5sHFBRdT4tZ1ui1z1JWi6UbNU
+      sudo helm repo update
