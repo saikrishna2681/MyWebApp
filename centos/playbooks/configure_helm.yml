@@ -3,6 +3,10 @@
   become: yes
   
   tasks:
+  - name: docker
+    shell: docker version
+  - name:
+    shell: hostname
   - name: Helm version
     shell: helm version
   - name: Add Helm Repo
