@@ -1,0 +1,10 @@
+packages:
+- docker
+- kubeadm
+- kubectl
+
+services:
+- docker
+- kubelet
+
+token_file: join_token
