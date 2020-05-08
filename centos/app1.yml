@@ -6,12 +6,12 @@
   tasks:
   - name: copy
     copy:
-     src: /home/jenkins/workspace/sharedlibrary/centos/httpd-basic-deployment.yml
+     src: /home/jenkins/workspace/centos/httpd-basic-deployment.yml
      dest: /home/ansadmin/
      mode: '0777'
   - name: copy
     copy:
-     src: /home/jenkins/workspace/sharedlibrary/centos/httpd-basic-service.yml
+     src: /home/jenkins/workspace/centos/httpd-basic-service.yml
      dest: /home/ansadmin/
      mode: '0777'
   - name: Retrieve kubectl config file from the master server.
