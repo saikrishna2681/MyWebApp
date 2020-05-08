@@ -6,6 +6,4 @@
   
   - name: Helm version
     shell: helm version
-    args:
-      executable: /bin/bash
  
