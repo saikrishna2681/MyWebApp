@@ -8,7 +8,7 @@
     shell: helm version
     
   - name: Add Helm Repo
-    shell: helm repo add helm https://saikrishna2681.jfrog.io/artifactory/sai2681/ --username admin --password admin123
+    shell: helm repo add helm https://saikrishna2681.jfrog.io/artifactory/saicharts/ --username admin --password admin123
 
   - name: Update Helm Repo
     shell: helm repo update
@@ -17,5 +17,5 @@
     shell: sudo kubectl create secret docker-registry regcred --docker-server=https://saikrishna2681.jfrog.io/artifactory/sai2681/ --docker-username=admin --docker-password=admin123
     
   - name: Install Helm Chart
-    shell: helm install sai2681/webapp --generate-name
+    shell: helm install saicharts/webapp --generate-name
  
