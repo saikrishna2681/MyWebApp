@@ -7,15 +7,15 @@
   - name: docker
     shell: docker version
     args:
-    executable: /bin/bash
+      executable: /bin/bash
   - name: hostname
     shell: hostname
     args:
-    executable: /bin/bash
+      executable: /bin/bash
   - name: Helm version
     shell: helm version
     args:
-    executable: /bin/bash
+      executable: /bin/bash
   - name: Add Helm Repo
     shell: helm repo add helm https://saikrishna2681.jfrog.io/artifactory/sai2681/ --username admin --password admin123
 
