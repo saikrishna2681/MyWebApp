@@ -1,0 +1,14 @@
+application:
+  name: webapp
+deployment:
+  replicas: 2
+image:
+  repo: saikrishna2681-sai2681.jfrog.io
+  name: webapp:2
+  tag: latest
+  secret: regcred
+service:
+  type: NodePort
+  port: 8080
+  targetport: 8080
+  nodeport: 30007
