@@ -11,7 +11,7 @@
   - name: list
     shell: ls -a
   - name: copy
-    shell: cp charts/ /home/ansadmin/charts
+    shell: cp -R charts/ /home/ansadmin/charts
   - name: helm package
     shell: helm package charts/webapp
   - name: Deploy Helm chart into artifactory
