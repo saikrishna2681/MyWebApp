@@ -6,8 +6,10 @@
     shell: helm version
   - name: Add Helm Repo
     shell: helm repo add helm https://saikrishna2681.jfrog.io/artifactory/helm --username admin --password admin123
-  - name: helm package
+  - name: PWD
     shell: pwd
+  - name: list
+    shell: ls -a
   - name: helm package
     shell: helm package charts/webapp
   - name: Deploy Helm chart into artifactory
