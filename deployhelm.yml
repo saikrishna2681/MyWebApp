@@ -7,6 +7,8 @@
   - name: Add Helm Repo
     shell: helm repo add helm https://saikrishna2681.jfrog.io/artifactory/helm --username admin --password admin123
   - name: helm package
+    shell: pwd
+  - name: helm package
     shell: helm package charts/webapp
   - name: Deploy Helm chart into artifactory
     shell: curl -uadmin:admin123 -T webapp-0.1.0.tgz "https://saikrishna2681.jfrog.io/artifactory/helm/webapp-0.1.0.tgz"
