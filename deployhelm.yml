@@ -1,0 +1,18 @@
+---
+- hosts: kubernetes-master
+  become: yes
+  tasks:
+  - name: Helm version
+    shell: helm version
+  - name: Add Helm Repo
+    shell: helm repo add helm https://saikrishna2681.jfrog.io/artifactory/helm --username admin --password admin123
+  - name: helm package
+    shell: helm package charts/webapp
+  - name: Deploy Helm chart into artifactory
+    shell: curl -uadmin:admin123 -T webapp-0.1.0.tgz "https://saikrishna2681.jfrog.io/artifactory/helm/webapp-0.1.0.tgz"
+  - name: Create Secret
+    shell: sudo kubectl create secret docker-registry regcred --docker-server=saikrishna2681-sai2681.jfrog.io --docker-username=admin --docker-password=admin123
+  - name: Update Helm Repo
+    shell: helm repo update
+  - name: Install Helm Chart
+    shell: helm install helm/webapp --generate-name
