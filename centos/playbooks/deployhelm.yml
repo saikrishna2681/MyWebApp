@@ -1,5 +1,5 @@
 ---
-- hosts: kubernetes-master-nodes
+- hosts: kubernetes-master
   become: yes
   tasks:
   - name: Helm version
