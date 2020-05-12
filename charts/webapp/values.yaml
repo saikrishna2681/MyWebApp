@@ -4,8 +4,8 @@ deployment:
   replicas: 2
 image:
   repo: saikrishna2681-sai2681.jfrog.io
-  name: webapp:2
-  tag: latest
+  name: webapp
+  tag: 4
   secret: regcred
 service:
   type: NodePort
