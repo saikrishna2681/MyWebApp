@@ -11,4 +11,4 @@ service:
   type: NodePort
   port: 8080
   targetport: 8080
-  nodeport: 30007
+  nodeport: 30008
