@@ -1,7 +1,7 @@
 application:
   name: webapp
 deployment:
-  replicas: 2
+  replicas: 3
 image:
   repo: saikrishna2681-sai2681.jfrog.io
   name: webapp2
